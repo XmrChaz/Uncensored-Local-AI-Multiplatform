@@ -107,4 +107,13 @@ class ChatStorageService extends GetxService {
       _settingsBox.get('backend_type', defaultValue: 'cpu') as String;
 
   set backendType(String value) => _settingsBox.put('backend_type', value);
+
+  // ── Odysseus Bridge (Termux) ────────────────────────────────
+
+  int get odysseusBridgePort =>
+      (_settingsBox.get('odysseus_bridge_port', defaultValue: 7000) as num)
+          .toInt();
+
+  set odysseusBridgePort(int value) =>
+      _settingsBox.put('odysseus_bridge_port', value);
 }

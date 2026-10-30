@@ -22,6 +22,11 @@ dependencies:
 
   # ── Networking / Downloads ──────────────────────────────────────
   http: ^1.2.2                     # HTTP requests + model downloading
+  url_launcher: ^6.3.3              # Open F-Droid / external links
+
+  # ── Odysseus Bridge (Termux WebView) ─────────────────────────────
+  webview_flutter: ^4.14.1          # Embedded dashboard WebView
+  android_intent_plus: ^6.1.0       # Launch Termux by package name
 
   # ── File System ─────────────────────────────────────────────────
   path_provider: ^2.1.5            # App documents / downloads dir

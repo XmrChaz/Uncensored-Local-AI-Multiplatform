@@ -10,6 +10,7 @@ import '../services/local_api_server_service.dart';
 import '../services/wakelock_service.dart';
 import '../services/log_service.dart';
 import '../services/background_optimizer_service.dart';
+import '../services/odysseus_bridge_service.dart';
 import '../routes/app_routes.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -48,6 +49,10 @@ class _SplashScreenState extends State<SplashScreen> {
       setState(() => _status = 'Preparing local API...');
       log.info('Preparing local API...', source: 'Splash');
       await Get.find<LocalApiServerService>().init();
+
+      setState(() => _status = 'Preparing Odysseus bridge...');
+      log.info('Preparing Odysseus bridge...', source: 'Splash');
+      await Get.find<OdysseusBridgeService>().init();
 
       setState(() => _status = 'Setting up background services...');
       log.info('Setting up background services...', source: 'Splash');

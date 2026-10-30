@@ -531,6 +531,49 @@ class _SettingsBody extends StatelessWidget {
                 }),
               ),
 
+              if (Platform.isAndroid) ...[
+                const SizedBox(height: 28),
+
+                // ── Odysseus Bridge ──────────────────────────
+                _sectionHeader(context, 'Odysseus Bridge'),
+                const SizedBox(height: 8),
+                Text(
+                  'Open a self-hosted Odysseus AI workspace running in Termux.',
+                  style: TextStyle(fontSize: 12, color: context.textD),
+                ),
+                const SizedBox(height: 12),
+                _card(
+                  context,
+                  child: ListTile(
+                    leading: Container(
+                      width: 36,
+                      height: 36,
+                      decoration: BoxDecoration(
+                        color: AppColors.accent.withValues(alpha: 0.12),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: const Icon(Icons.dashboard_rounded,
+                          size: 18, color: AppColors.accent),
+                    ),
+                    title: Text(
+                      'Odysseus Bridge',
+                      style: TextStyle(color: context.text, fontSize: 14),
+                    ),
+                    subtitle: Text(
+                      'Requires Termux — set up separately',
+                      style: TextStyle(color: context.textD, fontSize: 12),
+                    ),
+                    trailing: Icon(Icons.arrow_forward_ios_rounded,
+                        size: 14, color: context.textD),
+                    contentPadding: const EdgeInsets.symmetric(
+                      horizontal: 16,
+                      vertical: 4,
+                    ),
+                    onTap: () => Get.toNamed('/odysseus-bridge'),
+                  ),
+                ),
+              ],
+
               const SizedBox(height: 28),
 
               // ── Storage ───────────────────────────────────
