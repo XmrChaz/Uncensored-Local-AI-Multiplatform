@@ -52,5 +52,7 @@
             <action android:name="android.intent.action.PROCESS_TEXT"/>
             <data android:mimeType="text/plain"/>
         </intent>
+        <!-- Needed to detect and launch Termux for the Odysseus Bridge -->
+        <package android:name="com.termux"/>
     </queries>
 </manifest>
